@@ -1,0 +1,28 @@
+GET http://localhost:3000/places?text=Praça São João Batista, 30
+
+###
+GET http://localhost:3000/places?text=Rua Gen. de Divisa Pedro Rodrigues da Silva, 400
+
+###
+@originId = EkdQcmHDp2EgU8OjbyBKb8OjbyBCYXRpc3RhLCAzMCAtIENlbnRybywgQmFydWVyaSAtIFNQLCAwNjQwMS0wOTAsIEJyYXNpbCIwEi4KFAoSCbVErPrZA8-UEdxiHqdcieSdEB4qFAoSCZvax_TZA8-UEUX6CTcm9YEJ
+
+@destinationId = ChIJfRqkl4UBz5QR2oZVQN4TsWI
+
+###
+GET http://localhost:3000/directions?originId={{ originId }}&destinationId={{ destinationId }}
+
+###
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "rota 1",
+    "source_id": "{{ originId }}",
+    "destination_id": "{{ destinationId }}"
+}
+
+###
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/67575c40ee511342d9e8451e
